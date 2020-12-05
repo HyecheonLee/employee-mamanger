@@ -1,9 +1,10 @@
-package com.hyecheon.employeemamanger
+package com.hyecheon.employeemamanger.web
 
 import com.hyecheon.employeemamanger.model.*
 import com.hyecheon.employeemamanger.service.*
 import org.springframework.http.*
 import org.springframework.web.bind.annotation.*
+import java.lang.RuntimeException
 
 /**
  * @author hyecheon
@@ -31,14 +32,10 @@ class EmployeeResource(
 		ResponseEntity(newEmployee, HttpStatus.CREATED)
 	}
 
-	@PutMapping(value = ["/{id}", ""])
-	fun updateEmployee(@PathVariable(required = false) id: Long?, @RequestBody employee: Employee) = run {
-		val updatableEmployee: Employee = if (id != null) {
-			employee.copy(id = id)
-		} else {
-			employee
-		}
-		ResponseEntity(employeeService.updateEmployee(updatableEmployee), HttpStatus.OK)
+	@PutMapping
+	fun updateEmployee(@RequestBody employee: Employee) = run {
+		if (employee.id == null) throw RuntimeException("id 가 없습니다.")
+		ResponseEntity(employeeService.updateEmployee(employee), HttpStatus.OK)
 	}
 
 	@DeleteMapping("/{id}")

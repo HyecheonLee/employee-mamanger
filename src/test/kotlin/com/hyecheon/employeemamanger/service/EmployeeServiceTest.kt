@@ -5,13 +5,10 @@ import com.hyecheon.employeemamanger.model.*
 import com.hyecheon.employeemamanger.repository.*
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.*
-import org.junit.jupiter.api.function.Executable
 import org.springframework.beans.factory.annotation.*
-import org.springframework.boot.test.autoconfigure.orm.jpa.*
 import org.springframework.boot.test.context.*
 import org.springframework.test.context.*
 import org.springframework.transaction.annotation.*
-import java.lang.RuntimeException
 
 /**
  * @author hyecheon

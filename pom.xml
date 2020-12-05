@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hyecheon</groupId>
-    <artifactId>employee-mamanger</artifactId>
+    <artifactId>employee-manager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>employee-mamanger</name>
+    <name>employee-manager</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
